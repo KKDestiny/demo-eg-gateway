@@ -7,12 +7,12 @@
     "host": "localhost"
   },
   "apiEndpoints": {
-    "auditlogs": {
+    "demo-service": {
       "host": "*"
     }
   },
   "serviceEndpoints": {
-    "auditlogs": {
+    "demo-service": {
       "url": "http://localhost:3000"
     }
   },
@@ -29,8 +29,8 @@
   ],
 
   "pipelines": {
-    "auditlogs": {
-      "apiEndpoints": ["auditlogs"],
+    "demo-service": {
+      "apiEndpoints": ["demo-service"],
       "policies": [
         {
           "logger": {
@@ -43,7 +43,7 @@
           "proxy": [
             {
               "action": {
-                "serviceEndpoint": "auditlogs",
+                "serviceEndpoint": "demo-service",
                 "changeOrigin": true
               }
             }
